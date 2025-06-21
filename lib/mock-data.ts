@@ -92,19 +92,20 @@ import { format } from 'date-fns'
 const depositsByDay = [
   1230, 910, 880, 1020, 740, 520, 1400,
   970, 820, 1180, 760, 945, 610, 1330,
-  1270, 990, 660, 1434 // Soma: 19129
+  1270, 990, 660, 1434,
+  4980.23, 5320.18, 5406.15 // ➕ novos valores
 ]
 
 export const mockAffiliateData: AffiliateData = {
   kpis: {
-    totalDeposits: 19129,
+    totalDeposits:  34835.56,
     cpas: 0,
-    ftds: 164,
+    ftds: 457,
     revShare: 0,
     estimatedCommission: 0,
     depositChange: 0,
-    registros: 287,
-    cliques: 1438
+    registros: 1030,
+    cliques: 5448
   },
 
   dailyDeposits: depositsByDay.map((amount, index) => {
