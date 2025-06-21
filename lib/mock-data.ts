@@ -105,7 +105,7 @@ export const mockAffiliateData: AffiliateData = {
     estimatedCommission: 0,
     depositChange: 0,
     registros: 1030,
-    cliques: 5448
+    cliques: 5.448
   },
 
   dailyDeposits: depositsByDay.map((amount, index) => {
