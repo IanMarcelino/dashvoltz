@@ -103,7 +103,7 @@ export const mockAffiliateData: AffiliateData = {
     ftds: 592,
     revShare: 0,
     estimatedCommission: 0,
-    depositChange: 0,
+    depositChange:  68.7,
     registros: 1.088,
     cliques: 5.679
   },
