@@ -93,19 +93,19 @@ const depositsByDay = [
   1230, 910, 880, 1020, 740, 520, 1400,
   970, 820, 1180, 760, 945, 610, 1330,
   1270, 990, 660, 1434,
-  4980.23, 5320.18, 5406.15 // ➕ novos valores
+  4980.23, 5320.18, 5406.15, 4100.50, 3700.00, 2895.25, 2800.00, 2400.00, 1646.01 // ➕ novos valores
 ]
 
 export const mockAffiliateData: AffiliateData = {
   kpis: {
-    totalDeposits:  34835.56,
+    totalDeposits:   47987.32,
     cpas: 0,
-    ftds: 457,
+    ftds: 592,
     revShare: 0,
     estimatedCommission: 0,
     depositChange: 0,
-    registros: 1030,
-    cliques: 5.448
+    registros: 1.088,
+    cliques: 5.679
   },
 
   dailyDeposits: depositsByDay.map((amount, index) => {
