@@ -38,7 +38,7 @@ export interface AffiliateData {
 }
 
 // ============================
-// 📌 FUNÇÃO DE FILTRAGEM (usa KPIs fixos do mock)
+// 📌 FUNÇÃO DE FILTRAGEM
 // ============================
 
 export function getFilteredData(
@@ -77,49 +77,55 @@ export function getFilteredData(
   })
 
   return {
-    kpis: data.kpis!, // ✅ usa os valores mockados como estão
+    kpis: data.kpis!,
     dailyDeposits: filteredDeposits,
     referredUsers: filteredUsers
   }
 }
 
 // ============================
-// ✅ MOCK DE DADOS PARA TESTE
+// ✅ MOCK DE DADOS
 // ============================
 
 import { format } from 'date-fns'
 
+// Mock de depósitos de junho + julho
 const depositsByDay = [
   1230, 910, 880, 1020, 740, 520, 1400,
   970, 820, 1180, 760, 945, 610, 1330,
   1270, 990, 660, 1434,
-  4980.23, 5320.18, 5406.15, 4100.50, 3700.00, 2895.25, 2800.00, 2400.00, 1646.01 // ➕ novos valores
+  4980.23, 5320.18, 5406.15, 4100.50, 3700.00, 2895.25, 2800.00, 2400.00, 1646.01,
+  1033.15, 1337.40, 596.30, 803.12,
+  // julho
+  440, 3454
 ]
 
+// Geração dos dados mockados
 export const mockAffiliateData: AffiliateData = {
   kpis: {
-    totalDeposits:   47987.32,
+    totalDeposits: 60379.97,
     cpas: 0,
-    ftds: 592,
+    ftds: 610,
     revShare: 0,
     estimatedCommission: 0,
-    depositChange:  68.7,
-    registros: 1.088,
-    cliques: 5.679
+    depositChange: 68.7,
+    registros: 1096,
+    cliques: 5680
   },
 
-  dailyDeposits: depositsByDay.map((amount, index) => {
-    const date = format(new Date(2025, 5, index + 1), "yyyy-MM-dd") // junho = mês 5 (0-based)
-    const ftd = Math.random() < 0.2 ? 1 : undefined
-    const cpa = Math.random() < 0.1 ? 1 : undefined
-    const rev = Math.random() < 0.15 ? 0.2 : undefined
+  dailyDeposits: [
+    ...depositsByDay.map((amount, index) => {
+      const date = index < 30
+        ? format(new Date(2025, 5, index + 1), 'yyyy-MM-dd')  // Junho
+        : format(new Date(2025, 6, index - 29), 'yyyy-MM-dd') // Julho
 
-    return { date, amount, ftd, cpa, rev }
-  }),
+      const ftd = Math.random() < 0.2 ? 1 : 0
+      const cpa = Math.random() < 0.1 ? 1 : 0
+      const rev = Math.random() < 0.15 ? 0.2 : 0
+
+      return { date, amount, ftd, cpa, rev }
+    })
+  ],
 
   referredUsers: []
 }
-
-// ============================
-// 🔚 FIM DO MOCK
-// ============================
