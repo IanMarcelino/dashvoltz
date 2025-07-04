@@ -97,7 +97,7 @@ const depositsByDay = [
   4980.23, 5320.18, 5406.15, 4100.50, 3700.00, 2895.25, 2800.00, 2400.00, 1646.01,
   1033.15, 1337.40, 596.30, 803.12,
   // julho
-  440, 3454
+  440, 3454, 6015.4
 ]
 
 // Geração dos dados mockados
@@ -105,12 +105,12 @@ export const mockAffiliateData: AffiliateData = {
   kpis: {
     totalDeposits: 60379.97,
     cpas: 0,
-    ftds: 610,
+    ftds: 653,
     revShare: 0,
     estimatedCommission: 0,
-    depositChange: 68.7,
-    registros: 1096,
-    cliques: 5680
+    depositChange: 15.7,
+    registros: 1261,
+    cliques: 7527
   },
 
   dailyDeposits: [
